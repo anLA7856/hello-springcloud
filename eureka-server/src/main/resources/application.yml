@@ -1,0 +1,11 @@
+server:
+  port: 8761                        #端口
+
+eureka:
+  instance:
+    hostname: eureka-server             #实例名称
+  client:
+    registerWithEureka: false       #该应用为注册中心，这个代表不能自己注册自己
+    fetchRegistry: false            #注册中心职责维护服务示例，不需要去检索服务，设为false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0    #立即检索

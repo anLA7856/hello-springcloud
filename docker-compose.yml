@@ -1,0 +1,18 @@
+version: "1"
+services:
+  eureka-server:
+    image: "eureka-server:1.0-SNAPSHOT"
+    hostname: eureka-server
+    container_name: eureka-server
+    ports:
+     - "8761:8761"
+
+  hello-service:
+    image: "hello-service:1.0-SNAPSHOT"
+    hostname: hello-service
+    container_name: hello-service
+    links:
+      - eureka-server                  #链接到另一个容器
+    environment:
+       EUREKA_HOST: eureka-server
+       EUREKA_PORT: 8761

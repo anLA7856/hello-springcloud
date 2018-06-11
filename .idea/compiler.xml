@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
         <module name="eurekaserver" />
+        <module name="hello-service" />
         <module name="helloservice" />
+        <module name="service-consumer" />
         <module name="serviceconsumer" />
       </profile>
     </annotationProcessing>

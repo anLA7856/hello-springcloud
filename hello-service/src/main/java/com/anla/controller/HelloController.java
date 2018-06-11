@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 public class HelloController {
 
@@ -38,8 +40,22 @@ public class HelloController {
     public String index(@RequestParam String name){
         ServiceInstance config = client.getLocalServiceInstance();
         String serviceId = config.getServiceId();
-        String result = "hello: I am "+serviceId+", hello-service"+name;
+        String result = "hello: I am "+serviceId+", ribbon test"+name;
         logger.info(result);
         return result;
     }
+
+    @RequestMapping(value = "/hystrix",method = RequestMethod.GET)
+    public String tell(@RequestParam String name) throws InterruptedException {
+        Integer num = (int)Math.random()*128;
+        if(num%2 == 1){
+            Thread.sleep(5000);
+        }
+        ServiceInstance config = client.getLocalServiceInstance();
+        String serviceId = config.getServiceId();
+        String result = "hello: I am "+serviceId+", hystrix test:"+name;
+        logger.info(result);
+        return result;
+    }
+
 }

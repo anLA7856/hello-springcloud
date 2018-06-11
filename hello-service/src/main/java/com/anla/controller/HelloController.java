@@ -38,7 +38,7 @@ public class HelloController {
     public String index(@RequestParam String name){
         ServiceInstance config = client.getLocalServiceInstance();
         String serviceId = config.getServiceId();
-        String result = "hello: I am "+serviceId+", hello-service"+name;
+        String result = "hello: I am "+serviceId+", hello-service"+name+"my port is"+config.getPort();
         logger.info(result);
         return result;
     }

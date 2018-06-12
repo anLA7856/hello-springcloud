@@ -17,6 +17,7 @@
         <module>eureka-server</module>
         <module>hello-service</module>
         <module>service-consumer</module>
+        <module>feign-service-consumer</module>
     </modules>
     <packaging>pom</packaging>
 

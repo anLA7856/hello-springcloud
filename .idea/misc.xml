@@ -12,6 +12,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/service-consumer/feign-service-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/service-privider-A/pom.xml" />
       </set>
     </option>

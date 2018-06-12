@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
         <module name="eurekaserver" />
+        <module name="feignserviceconsumer" />
         <module name="hello-service" />
         <module name="helloservice" />
         <module name="service-consumer" />

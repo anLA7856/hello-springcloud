@@ -8,13 +8,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
         <module name="eurekaserver" />
+        <module name="feign-service-consumer" />
+        <module name="feignserviceconsumer" />
         <module name="hello-service" />
         <module name="helloservice" />
+        <module name="hystrixdashboard" />
         <module name="service-consumer" />
         <module name="serviceconsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="feign-service-consumer" target="1.6" />
       <module name="serviceprividerA" target="1.6" />
     </bytecodeTargetLevel>
   </component>

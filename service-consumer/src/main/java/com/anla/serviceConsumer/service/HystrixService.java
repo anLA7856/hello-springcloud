@@ -12,17 +12,14 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class HystrixService {
-
     @Autowired
     private RestTemplate restTemplate;
-
     @HystrixCommand(fallbackMethod = "hystrixFallback")
     public String hystrixService(String name){
         ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://hello-service/hystrix?name={1}",String.class,name+":test anla");
         String body = responseEntity.getBody();
         return body;
     }
-
     public String hystrixFallback(String name){
         return "arg is "+name+",sorry,service is busy, please wait a moment and try again.";
     }

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 5555
+zuul:
+  routes:
+    my-api:
+      path: /hello-service/**                #所有访问http://localhost:8080/api-a-url/*的请求，都会转发到
+      ##url: api        #http://localhost:8080/*中
+      serviceId: hello-service          #整合eureka，利用服务名来访问。
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

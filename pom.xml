@@ -18,6 +18,9 @@
         <module>hello-service</module>
         <module>service-consumer</module>
         <module>feign-service-consumer</module>
+        <module>api-gateway</module>
+        <module>sso-client</module>
+        <module>sso-server</module>
     </modules>
     <packaging>pom</packaging>
 
